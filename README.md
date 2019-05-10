@@ -1,4 +1,4 @@
-# Client to Client Keycloak Example
-This sample demonstrates how to configure a connection to keycloak protected client.
+# Accessing Center-Agent-Moves using Spring RestTemplate example
+This sample demonstrates how to configure a connection to keycloak protected application 'center-agent-moves'
 
-[spring-security-oauth2-resource-server](https://gitee.unigroupinc.com/jolt/keycloak-examples/tree/master/spring-security-oauth2-resource-server) must also be running for this example to work.
+Please update the dummy username and password in the class io.qdivision.springbootbackendservice.SpringBootBackendServiceApplication (lines 52, 53) with actual.
