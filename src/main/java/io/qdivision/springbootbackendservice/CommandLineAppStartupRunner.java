@@ -118,7 +118,7 @@ public class CommandLineAppStartupRunner implements CommandLineRunner {
                 "}";
 
         HttpEntity<String> request = new HttpEntity<String>(jsonBody, headers);
-        String url = "http://localhost:8080/"+"api/createorder";
+        String url = "https://devcenter-agent-moves.cloud1.unigroup.com/"+"api/createorder";
         final ResponseEntity<Object> response2 = oAuth2RestTemplate
                 .exchange(url, HttpMethod.PUT, request,
                         Object.class);
