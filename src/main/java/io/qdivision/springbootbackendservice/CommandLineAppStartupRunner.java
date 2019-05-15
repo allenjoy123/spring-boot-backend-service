@@ -51,10 +51,74 @@ public class CommandLineAppStartupRunner implements CommandLineRunner {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json");
 
-        String jsonBody = "{  \"centerMove\" : {    \"moveDetail\" : {    \"mode\": \"update\",  \"firstName\" : \"first name\",      \"lastName\" : \"last name\",      \"middleName\" : \"test\",      \"bookerCmpy\" : \"U\",      \"orderBookerAgntNbr\" : \"123\",      \"poNbr\" : \"1123\",      \"gppApplies\" : \"2\",      \"gppDeclinedRsn\" : \"test2\",      \"amountDeduction\" : \"10\",      \"gppValueType\" : \"test\",      \"salesId\" : \"11223\",      \"ileadnbr\" : \"123\",      \"shipmentType\" : \"111\",      \"regionNbr\" : \"139\", \"orderNbr\" : \"1024631\",   \"orderYearNbr\" : \"2\",  \"nationalAcctNbr\" : \"128\",      \"nationalAcctCmpy\" : \"N\",      \"grossWeight\" : \"10\",      \"billedWeight\" : \"1112\",      \"cube\" : \"149\",      \"originAddress\" : \"123\",      \"originCity\" : \"test\",      \"originStateCode\" : \"IL\",      \"originCountryCodeISO\" : \"USA\",      \"destAddress\" : \"146 Street\",      \"destCity\" : \"test\",      \"destStateCode\" : \"MO\",      \"destCountryCode\" : \"C\",      \"billToAgentCmpy\" : \"U\",      \"billToAcctIndt\" : \"I\",      \"gppBillRate\" : \"10\",      \"gppInsuranceValueAmount\" : \"1000\",      \"gppOption\" : \"rest\",      \"gppTotalLossCovge\" : \"S\",      \"gppCertificateNumber\" : \"114\",      \"serviceList\" : [ {        \"distributionCode\" : \"STL\",        \"billAmount\" : \"10\",        \"billCurrencyCode\" : \"U\",        \"payAmount\" : \"2745\",        \"payCurrencyCode\" : \"US\",        \"agentpayCmpy\" : \"U\",        \"agentpayNbr\" : \"123\",        \"vendorpayNbr\" : \"123\",        \"invoiceNbr\" : \"1233\",        \"invoiceDate\" : \"12\"  , \"guid\" : \"123436789\"    } ]    }  }}";
+        String jsonBody = "{\n" +
+                "  \"centerMove\" : {\n" +
+                "    \"moveDetail\" : {\n" +
+                "      \"mode\" : \"add\",\n" +
+                "      \"firstName\" : \"John\",\n" +
+                "      \"lastName\" : \"Doe\",\n" +
+                "      \"middleName\" : \"K\",\n" +
+                "      \"centerMoveAgntCmpy\" : \"U\",\n" +
+                "      \"centerMoveAgntNbr\" : \"164\",\n" +
+                "      \"bookerCmpy\" : \"U\",\n" +
+                "      \"orderBookerAgntNbr\" : \"123\",\n" +
+                "      \"orderNbr\" : \"\",\n" +
+                "      \"orderYearNbr\" : \"2\",\n" +
+                "      \"directionType\" : \"IMPORT\",\n" +
+                "      \"serviceType\" : \"DOOR_TO_DOOR\",\n" +
+                "      \"departmentType\" : \"PHE\",\n" +
+                "      \"transportationMode\" : \"AIR\",\n" +
+                "      \"poNbr\" : \"123\",\n" +
+                "      \"gppApplies\" : \"10\",\n" +
+                "      \"gppDeclinedRsn\" : \"test\",\n" +
+                "      \"amountDeduction\" : \"10\",\n" +
+                "      \"gppValueType\" : \"test\",\n" +
+                "      \"salesId\" : \"11223\",\n" +
+                "      \"ileadnbr\" : \"123\",\n" +
+                "      \"shipmentType\" : \"111\",\n" +
+                "      \"regionNbr\" : \"1234\",\n" +
+                "      \"nationalAcctNbr\" : \"123\",\n" +
+                "      \"nationalAcctCmpy\" : \"U\",\n" +
+                "      \"grossWeight\" : \"10\",\n" +
+                "      \"billedWeight\" : \"1111\",\n" +
+                "      \"cube\" : \"10\",\n" +
+                "      \"originAddress\" : \"123 Main St\",\n" +
+                "      \"originCity\" : \"New York\",\n" +
+                "      \"originStateCode\" : \"NY\",\n" +
+                "      \"originCountryCode\" : \"USA\",\n" +
+                "      \"originPostalCode\" : \"12561\",\n" +
+                "      \"destAddress\" : \"123 Main St\",\n" +
+                "      \"destCity\" : \"St. Louis\",\n" +
+                "      \"destStateCode\" : \"MO\",\n" +
+                "      \"destCountryCode\" : \"USA\",\n" +
+                "      \"destPostalCode\" : \"63141\",\n" +
+                "      \"billToAgentCmpy\" : \"U\",\n" +
+                "      \"billToAcctIndt\" : \"I\",\n" +
+                "      \"gppBillRate\" : \"10\",\n" +
+                "      \"gppTotalValuationAmount\" : \"10.00\",\n" +
+                "      \"gppCertificateNumber\" : \"111\",\n" +
+                "      \"serviceList\" : [ {\n" +
+                "        \"distributionCode\" : \"064\",\n" +
+                "        \"billAmount\" : \"10\",\n" +
+                "        \"billCurrencyCode\" : \"USD\",\n" +
+                "        \"payAmount\" : \"1111\",\n" +
+                "        \"payCurrencyCode\" : \"USD\",\n" +
+                "        \"agentpayCmpy\" : \"U\",\n" +
+                "        \"agentpayNbr\" : \"123\",\n" +
+                "        \"vendorpayNbr\" : \"123\",\n" +
+                "        \"invoiceNbr\" : \"1233\",\n" +
+                "        \"invoiceDate\" : \"01/01/2019\",\n" +
+                "        \"guid\" : \"cc9049e3-91da-46c5-bca4-255795b76ce7\"\n" +
+                "      } ],\n" +
+                "      \"packDate\" : \"2020/01/31\",\n" +
+                "      \"actualDeliveryDate\" : \"2020/02/27\",\n" +
+                "      \"moveManagerReleaseToBillInd\" : false\n" +
+                "    }\n" +
+                "  }\n" +
+                "}";
 
         HttpEntity<String> request = new HttpEntity<String>(jsonBody, headers);
-        String url = "https://devcenter-agent-moves.cloud1.unigroup.com/"+"api/createorder";
+        String url = "http://localhost:8080/"+"api/createorder";
         final ResponseEntity<Object> response2 = oAuth2RestTemplate
                 .exchange(url, HttpMethod.PUT, request,
                         Object.class);

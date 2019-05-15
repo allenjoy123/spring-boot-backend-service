@@ -49,8 +49,8 @@ public class SpringBootBackendServiceApplication {
 		resourceDetails.setClientId("center-agent-moves");
 		resourceDetails.setAccessTokenUri("https://auth.cloud1.unigroup.com/auth/realms/devunigroup/protocol/openid-connect/token");
 		resourceDetails.setGrantType("password");
-		resourceDetails.setUsername("agent username");
-		resourceDetails.setPassword("agent password");
+		resourceDetails.setUsername("Portal username");
+		resourceDetails.setPassword("Portal password");
 
 		return new OAuth2RestTemplate(resourceDetails, clientContext);
 	}
